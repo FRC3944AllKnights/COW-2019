@@ -1,8 +1,8 @@
 #ifndef PUSHER_H
 #define PUSHER_H
 
-#include "Talon.h"
-#include "DigitalInput.h"
+#include "frc/Talon.h"
+#include "frc/DigitalInput.h"
 
 class Pusher{
     public:

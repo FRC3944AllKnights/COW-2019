@@ -5,8 +5,10 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include <IterativeRobot.h>
-#include <Joystick.h>
+#include <cameraserver/CameraServer.h>
+#include <wpi/raw_ostream.h>
+#include <frc/TimedRobot.h>
+#include <frc/Joystick.h>
 #include "Drive.h"
 #include "NotServo.h"
 #include "Pusher.h"
@@ -16,11 +18,12 @@
  * This is a demo program showing how to use Mecanum control with the
  * MecanumDrive class.
  */
-class Robot : public frc::IterativeRobot {
+class Robot : public frc::TimedRobot {
  public:
   void RobotInit() override {
     // Invert the left side motors. You may need to change or remove this to
     // match your robot.
+    frc::CameraServer::GetInstance() -> StartAutomaticCapture("front", 0);
     COWDrive.init();
     Servo.originPos();
   }
@@ -57,4 +60,6 @@ class Robot : public frc::IterativeRobot {
   frc::Joystick m_stick{kJoystickChannel};
 };
 
-START_ROBOT_CLASS(Robot)
+#ifndef RUNNING_FRC_TESTS
+int main() { return frc::StartRobot<Robot>(); }
+#endif

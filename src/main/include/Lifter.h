@@ -1,8 +1,8 @@
 #ifndef LIFTER_H
 #define LIFTER_H
 
-#include <Talon.h>
-#include <DigitalInput.h>
+#include <frc/Talon.h>
+#include <frc/DigitalInput.h>
 
 class Lifter{
     public:

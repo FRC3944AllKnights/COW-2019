@@ -1,8 +1,8 @@
 #ifndef DRIVE_H
 #define DRIVE_H
 
-#include <Drive/MecanumDrive.h>
-#include <Talon.h>
+#include <frc/drive/MecanumDrive.h>
+#include <frc/Talon.h>
 
 class Drive{
     public:
