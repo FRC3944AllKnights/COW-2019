@@ -23,7 +23,8 @@ class Robot : public frc::TimedRobot {
   void RobotInit() override {
     // Invert the left side motors. You may need to change or remove this to
     // match your robot.
-    frc::CameraServer::GetInstance() -> StartAutomaticCapture("front", 0);
+    frc::CameraServer::GetInstance() -> StartAutomaticCapture("0", 0);
+    frc::CameraServer::GetInstance() -> StartAutomaticCapture("1", 1);
     COWDrive.init();
     Servo.originPos();
   }
